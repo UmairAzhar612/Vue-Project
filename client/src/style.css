@@ -1,0 +1,218 @@
+/* =========================================================
+   MovieApp — global styles
+   All the CSS for the whole app lives in this one file.
+   Theme: dark "cinema" navy header + a gold accent.
+   ========================================================= */
+
+/* ---- Base ---- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #f4f5f7;
+  color: #22223b;
+  line-height: 1.6;
+}
+
+/* ---- The whole app sits inside one centered white "card" ---- */
+#app {
+  max-width: 820px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(20, 20, 43, 0.08);
+  overflow: hidden; /* keeps the header bar inside the rounded corners */
+}
+
+/* the app's root <div> — gives everything comfortable padding */
+#app > div {
+  padding: 1.5rem 2rem 2rem;
+}
+
+/* ---- Header title bar ("Movie App") ---- */
+h1 {
+  /* the negative margins pull the bar out to the full width of the card */
+  margin: -1.5rem -2rem 1.5rem;
+  padding: 1.4rem 2rem;
+  background: #14142b;
+  color: #ffffff;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #e8a93b; /* gold accent line */
+}
+
+/* ---- Navbar ---- */
+nav {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e6e6ef;
+  color: #b3b3c6; /* colour of the "|" separators */
+  font-weight: 600;
+}
+
+nav a {
+  color: #4a4a6a;
+  text-decoration: none;
+  padding: 0 0.35rem;
+}
+
+nav a:hover {
+  color: #14142b;
+}
+
+/* vue-router adds this class to the link of the page you're on */
+nav a.router-link-active {
+  color: #14142b;
+  border-bottom: 2px solid #e8a93b; /* gold underline on the current page */
+  padding-bottom: 2px;
+}
+
+/* ---- Headings ---- */
+h2 {
+  color: #14142b;
+  font-size: 1.35rem;
+  margin: 0 0 1rem;
+}
+
+h3 {
+  color: #14142b;
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+/* ---- Text & links ---- */
+p {
+  margin: 0.5rem 0;
+}
+
+a {
+  color: #3a3a6a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* the yellow highlight on matched search text */
+mark {
+  background: #ffe6a8;
+  padding: 0 2px;
+  border-radius: 3px;
+}
+
+/* ---- Form controls (search box, genre dropdown) ---- */
+input,
+select {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #d7d7e2;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #22223b;
+}
+
+input {
+  margin-right: 0.5rem;
+}
+
+select {
+  margin-left: 0.35rem;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #e8a93b;
+  box-shadow: 0 0 0 3px rgba(232, 169, 59, 0.2);
+}
+
+/* ---- Buttons ---- */
+button {
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #e8a93b;
+  color: #14142b;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: #d9962a;
+}
+
+/* ---- Movie card ---- */
+.movie-card {
+  border: 1px solid #e6e6ef;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.movie-card:hover {
+  box-shadow: 0 6px 18px rgba(20, 20, 43, 0.1);
+  transform: translateY(-2px);
+}
+
+.movie-card h3 a {
+  color: #14142b;
+}
+
+.movie-card h3 a:hover {
+  color: #d9962a;
+  text-decoration: none;
+}
+
+.movie-card p {
+  margin: 0.15rem 0;
+  color: #6e6e86;
+  font-size: 0.9rem;
+}
+
+.movie-card button {
+  margin-top: 0.6rem;
+}
+
+/* the card used to have a divider line; the border replaces it */
+.movie-card hr {
+  display: none;
+}
+
+/* ---- Lists (search results, cast list) ---- */
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin: 0.3rem 0;
+}
+
+/* hide the plain <hr> lines everywhere — borders do the dividing now */
+hr {
+  display: none;
+}
+
+/* ---- Small screens (phones) ---- */
+@media (max-width: 600px) {
+  #app {
+    margin: 0;
+    border-radius: 0;
+  }
+  #app > div {
+    padding: 1rem 1.1rem 1.5rem;
+  }
+  h1 {
+    margin: -1rem -1.1rem 1rem;
+    padding: 1.1rem;
+    font-size: 1.3rem;
+  }
+}
